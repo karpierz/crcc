@@ -10,6 +10,7 @@ from ._dll      import dll
 
 class FILE(ct.Structure): pass
 
+
 # The types of the CRC values.
 #
 crc8_t  = ct.c_uint8
@@ -45,6 +46,7 @@ class model_t(ct.Structure):
     ("_crc_update_func",
      CFUNC(crc_t, ct.c_void_p, ct.c_size_t, ct.POINTER(crc_t), crc_t)),
 ]
+
 
 # Predefined CRC models.
 #
