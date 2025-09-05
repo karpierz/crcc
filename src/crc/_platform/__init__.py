@@ -3,7 +3,9 @@
 # Copyright (c) 1994 Adam Karpierz
 # SPDX-License-Identifier: Zlib
 
-from ._platform import *
+from utlx.platform import *
+
+__all__ = ('DLL_PATH', 'DLL', 'dlclose', 'CFUNC')
 
 if is_windows:  # pragma: no cover
     from ._windows import DLL_PATH, DLL, dlclose, CFUNC

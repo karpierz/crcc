@@ -10,7 +10,9 @@ import sysconfig
 import ctypes as ct
 from functools import partial
 
-from .._platform import is_pypy
+from utlx.platform import is_pypy
+
+__all__ = ('DLL_PATH', 'DLL', 'dlclose', 'CFUNC')
 
 this_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -23,8 +25,8 @@ dll_suffix = (("" if is_pypy
 
 DLL_PATH = os.path.join(os.path.dirname(this_dir), "crc" + dll_suffix)
 
-from ctypes  import CDLL as DLL
-from _ctypes import dlclose
+from ctypes  import CDLL as _DLL
+from _ctypes import dlclose  # type: ignore[attr-defined]
 from ctypes  import CFUNCTYPE as CFUNC
 
-DLL = partial(DLL, mode=ct.RTLD_GLOBAL)
+DLL = partial(_DLL, mode=ct.RTLD_GLOBAL)

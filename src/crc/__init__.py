@@ -3,6 +3,6 @@
 
 """Public Python API of CRC package."""
 
-from .__about__ import * ; del __about__  # noqa
+from .__about__ import * ; del __about__  # type: ignore[name-defined]  # noqa
 
-from ._crc import *  # noqa
+from ._crc import * ; del _crc  # type: ignore[name-defined]  # noqa
