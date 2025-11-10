@@ -15,7 +15,7 @@
 #ifndef _CRC_PREDEF_C_
 #define _CRC_PREDEF_C_
 
-#include "../../include/crc/crc.h"
+#include "../../include/crcc/crc.h"
 
 typedef enum {false = 0, true = 1} bool;
 
@@ -28,7 +28,7 @@ crc_model_t crc_predefined_models[] = {
 
     /* 8 bits */                                                                                
     {"CRC-8",               8, 0x07,       0x00,       false, false, 0x00,       0xF4},
-    {"CRC-8/AUTOSAR",       8, 0x2f,       0xff,       false, false, 0xff,       0xdf},
+    {"CRC-8/AUTOSAR",       8, 0x2F,       0xFF,       false, false, 0xFF,       0xDF},
     {"CRC-8/CDMA2000",      8, 0x9B,       0xFF,       false, false, 0x00,       0xDA},
     {"CRC-8/DARC",          8, 0x39,       0x00,       true,  true,  0x00,       0x15},
     {"CRC-8/DVB-S2",        8, 0xD5,       0x00,       false, false, 0x00,       0xBC},
@@ -40,8 +40,8 @@ crc_model_t crc_predefined_models[] = {
     {"CRC-8/WCDMA",         8, 0x9B,       0x00,       true,  true,  0x00,       0x25},
 
     /* 16 bits */
-    {"CRC-16/IBM-3740",    16, 0x1021,     0xffff,     false, false, 0x0000,     0x29b1},
-    {"CRC-16/AUTOSAR",     16, 0x1021,     0xffff,     false, false, 0x0000,     0x29b1}, /*Alias*/
+    {"CRC-16/IBM-3740",    16, 0x1021,     0xFFFF,     false, false, 0x0000,     0x29B1},
+    {"CRC-16/AUTOSAR",     16, 0x1021,     0xFFFF,     false, false, 0x0000,     0x29B1}, /*Alias*/
     {"CRC-16/CCITT-FALSE", 16, 0x1021,     0xFFFF,     false, false, 0x0000,     0x29B1}, /*Alias*/
     {"CRC-16/ARC",         16, 0x8005,     0x0000,     true,  true,  0x0000,     0xBB3D},
     {"CRC-16/AUG-CCITT",   16, 0x1021,     0x1D0F,     false, false, 0x0000,     0xE5CC},
@@ -60,7 +60,7 @@ crc_model_t crc_predefined_models[] = {
     {"CRC-16/TELEDISK",    16, 0xA097,     0x0000,     false, false, 0x0000,     0x0FB3},
     {"CRC-16/TMS37157",    16, 0x1021,     0x89EC,     true,  true,  0x0000,     0x26B1},
     {"CRC-16/USB",         16, 0x8005,     0xFFFF,     true,  true,  0xFFFF,     0xB4C8},
-    {"CRC-A",              16, 0x1021,     0xc6c6,     true,  true,  0x0000,     0xBF05},
+    {"CRC-A",              16, 0x1021,     0xC6C6,     true,  true,  0x0000,     0xBF05},
     {"CRC-16/KERMIT",      16, 0x1021,     0x0000,     true,  true,  0x0000,     0x2189},
     {"CRC-16/MODBUS",      16, 0x8005,     0xFFFF,     true,  true,  0x0000,     0x4B37},
     {"CRC-16/X-25",        16, 0x1021,     0xFFFF,     true,  true,  0xFFFF,     0x906E},
@@ -75,7 +75,7 @@ crc_model_t crc_predefined_models[] = {
 
     /* 32 bits */                                                                                
     {"CRC-32",             32, 0x04C11DB7, 0xFFFFFFFF, true,  true,  0xFFFFFFFF, 0xCBF43926},
-    {"CRC-32/AUTOSAR",     32, 0xf4acfb13, 0xffffffff, true,  true,  0xffffffff, 0x1697d06a},
+    {"CRC-32/AUTOSAR",     32, 0xF4ACFB13, 0xFFFFFFFF, true,  true,  0xFFFFFFFF, 0x1697D06A},
     {"CRC-32/BZIP2",       32, 0x04C11DB7, 0xFFFFFFFF, false, false, 0xFFFFFFFF, 0xFC891918},
     {"CRC-32C",            32, 0x1EDC6F41, 0xFFFFFFFF, true,  true,  0xFFFFFFFF, 0xE3069283},
     {"CRC-32D",            32, 0xA833982B, 0xFFFFFFFF, true,  true,  0xFFFFFFFF, 0x87315576},
@@ -86,7 +86,7 @@ crc_model_t crc_predefined_models[] = {
     {"CRC-32/XFER",        32, 0x000000AF, 0x00000000, false, false, 0x00000000, 0xBD0BE338},
 
     /* 40 bits */                                                                                
-    {"CRC-40/GSM", 40, 0x0004820009, 0x0000000000, false, false, 0xffffffffff, 0xd4164fc646},
+    {"CRC-40/GSM", 40, 0x0004820009, 0x0000000000, false, false, 0xFFFFFFFFFF, 0xD4164FC646},
 
     /* 64 bits */                                                                                
     {"CRC-64",     64, 0x42F0E1EBA9EA3693, 0x0000000000000000, false, false, 0x0000000000000000, 0x6C40DF5F0B497347},

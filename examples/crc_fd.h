@@ -31,7 +31,7 @@
 #ifndef _CRC_FD_
 #define _CRC_FD_
 
-#include <crc/crc.h>
+#include <crcc/crc.h>
 
 #ifdef __cplusplus
 extern "C" {

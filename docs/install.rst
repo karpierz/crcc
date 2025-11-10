@@ -20,4 +20,4 @@ Install
 
 Should be easy as::
 
-    python -m pip install --upgrade crc-ct
+    python -m pip install --upgrade crcc

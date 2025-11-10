@@ -1,5 +1,5 @@
-crc-ct
-======
+crcc
+====
 
 C and Python (ctypes/cffi-based) CRC calculations module.
 
@@ -81,10 +81,10 @@ Authors
 
 * Adam Karpierz <adam@karpierz.net>
 
-.. |package| replace:: crc-ct
-.. |package_bold| replace:: **crc-ct**
+.. |package| replace:: crcc
+.. |package_bold| replace:: **crcc**
 .. |copyright| replace:: Copyright (c) 1994-2025 Adam Karpierz
-.. |respository| replace:: https://github.com/karpierz/crc-ct.git
-.. _Development page: https://github.com/karpierz/crc-ct
-.. _PyPI record: https://pypi.org/project/crc-ct/
-.. _Documentation: https://crc-ct.readthedocs.io/
+.. |respository| replace:: https://github.com/karpierz/crcc.git
+.. _Development page: https://github.com/karpierz/crcc
+.. _PyPI record: https://pypi.org/project/crcc/
+.. _Documentation: https://crcc.readthedocs.io/

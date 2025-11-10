@@ -11,7 +11,7 @@ class BuildExt(build_ext):
         "unix": ["-O3", "-g0", "-ffast-math"],
     }
     link_args = {
-        "msvc": ["/DEF:src/crc/crc.def"],
+        "msvc": ["/DEF:src/crcc/crc.def"],
         "unix": [],
     }
 
@@ -29,19 +29,19 @@ class BuildExt(build_ext):
             ext.extra_link_args = link_args
         build_ext.build_extensions(self)
 
-ext_modules = [Extension(name="crc._platform.crc",
+ext_modules = [Extension(name="crcc._platform.crc",
                          language="c",
-                         sources=["src/crc/crc.c",
-                                  "src/crc/crc_table.c",
-                                  "src/crc/crc_update.c",
-                                  "src/crc/crc_py.c"],
-                         depends=["include/crc/crc.h",
-                                  "src/crc/crc.def",
-                                  "src/crc/crc_defs.h",
-                                  "src/crc/crc_table.h",
-                                  "src/crc/crc_update.h"])]
+                         sources=["src/crcc/crc.c",
+                                  "src/crcc/crc_table.c",
+                                  "src/crcc/crc_update.c",
+                                  "src/crcc/crc_py.c"],
+                         depends=["include/crcc/crc.h",
+                                  "src/crcc/crc.def",
+                                  "src/crcc/crc_defs.h",
+                                  "src/crcc/crc_table.h",
+                                  "src/crcc/crc_update.h"])]
 
 setup(
     ext_modules = ext_modules,
-    cmdclass    = dict(build_ext=BuildExt),
+    cmdclass = dict(build_ext=BuildExt),
 )
