@@ -1,2 +1,0 @@
-# Ensure GitHub classifies the project as Python
-*.py linguist-language=Python
