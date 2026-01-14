@@ -1,0 +1,2 @@
+https://reveng.sourceforge.io/crc-catalogue/all.htm
+https://www.zlib.net/crc_v3.txt

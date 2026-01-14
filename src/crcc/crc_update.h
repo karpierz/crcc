@@ -34,7 +34,7 @@
 #ifndef _CRC_UPDATE_H_
 #define _CRC_UPDATE_H_
 
-#include "../../include/crc/crc.h"
+#include "../../include/crcc/crc.h"
 
 #ifdef __cplusplus
 extern "C" {
