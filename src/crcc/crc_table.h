@@ -26,7 +26,7 @@
 #ifndef _CRC_TABLE_H_
 #define _CRC_TABLE_H_
 
-#include "../../include/crc/crc.h"
+#include "../../include/crcc/crc.h"
 
 #ifdef __cplusplus
 extern "C" {

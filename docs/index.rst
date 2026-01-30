@@ -10,8 +10,11 @@ Contents
 .. toctree::
    :maxdepth: 2
 
-   install.rst
    userguide.rst
+
+.. toctree::
+   :titlesonly:
+
    CHANGES.rst
 
 Indices and tables

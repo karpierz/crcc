@@ -5,9 +5,9 @@
 
 #include <stdint.h>
 #include <stdio.h>
-#include "../include/crc/crc.h"
-#include "../src/crc/crc_table.h"
-#include "../src/crc/crc_defs.h"
+#include "../include/crcc/crc.h"
+#include "../src/crcc/crc_table.h"
+#include "../src/crcc/crc_defs.h"
 
 typedef enum {false = 0, true = 1} bool;
 

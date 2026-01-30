@@ -2,9 +2,12 @@
 # SPDX-License-Identifier: Zlib
 
 import unittest
+from unittest import mock
+import sys
 import itertools
 
-import crc
+import crcc as crc
+from utlx.platform import is_windows
 
 
 class CrcTestCase(unittest.TestCase):
@@ -33,18 +36,32 @@ class CrcTestCase(unittest.TestCase):
             if crc_model.width == 0: break
             self.crc_model_names.append(crc_model.name.decode("utf-8"))
 
+    @unittest.skipUnless(is_windows, "Windows-only test")
+    def test_dll_nonexistent(self):
+        with mock.patch("sysconfig.get_config_var",
+                        return_value=".nonexistent"), \
+             self.assertRaises(ImportError) as exc:
+            sys.modules.pop("crcc._platform.windows", None)
+            sys.modules.pop("crcc._platform", None)
+            import crcc._platform
+        sys.modules.pop("crcc._platform.windows", None)
+        sys.modules.pop("crcc._platform", None)
+        import crcc._platform
+        self.assertIn("Shared library not found: ", str(exc.exception))
+
     def test_predefined_models(self):
         """Test of predefined CRC models"""
+        print()
         for crc_model in crc.predefined_models:
             crc_result = crc.init(crc_model)
             crc_result = crc.update(crc_model, self.check_seq, 9, crc_result)
             crc_result = crc.final(crc_model, crc_result)
             self.assertEqual(crc_result, crc_model.check)
             print("{:>22}: {:016X}".format(crc_model.name.decode("utf-8"), crc_result))
-        print()
 
     def test_user_models(self):
         """Test of user-defined CRC models"""
+        print()
         for crc_model in self.crc_models:  # pragma: no cover
             if crc_model.width == 0: break
             crc_result = crc.init(crc_model)
@@ -52,10 +69,10 @@ class CrcTestCase(unittest.TestCase):
             crc_result = crc.final(crc_model, crc_result)
             self.assertEqual(crc_result, crc_model.check)
             print("{:>22}: {:016X}".format(crc_model.name.decode("utf-8"), crc_result))
-        print()
 
     def test_predefined_models_by_name(self):
         """Test of predefined CRC models by model name"""
+        print()
         for name in self.crc_predefined_model_names:
             crc_model = crc.predefined_model_by_name(name.encode("utf-8"))[0]
             self.assertEqual(name, crc_model.name.decode("utf-8"))
@@ -64,10 +81,10 @@ class CrcTestCase(unittest.TestCase):
             crc_result = crc.final(crc_model, crc_result)
             self.assertEqual(crc_result, crc_model.check)
             print("{:>22}: {:016X}".format(crc_model.name.decode("utf-8"), crc_result))
-        print()
 
     def test_user_models_by_name(self):
         """Test of user-defined CRC models by model name"""
+        print()
         for name in self.crc_model_names:
             crc_model = crc.model_by_name(name.encode("utf-8"), self.crc_models)[0]
             self.assertEqual(name, crc_model.name.decode("utf-8"))
@@ -76,4 +93,3 @@ class CrcTestCase(unittest.TestCase):
             crc_result = crc.final(crc_model, crc_result)
             self.assertEqual(crc_result, crc_model.check)
             print("{:>22}: {:016X}".format(crc_model.name.decode("utf-8"), crc_result))
-        print()
