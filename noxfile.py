@@ -1,8 +1,8 @@
-# Copyright (c) 2025 Adam Karpierz
+# Copyright (c) 2026 Adam Karpierz
 # SPDX-License-Identifier: Zlib
 
 # /// script
-# dependencies = ["nox>=2025.11.12", "nox_ext", "nox_lib"]
+# dependencies = ["nox>=2026.2.9", "nox_ext", "nox_lib"]
 # ///
 
 from __future__ import annotations
@@ -95,7 +95,6 @@ def docs(session: nox.Session) -> None:
 for python in tests.python:
     @nox.session(name=f"build_py-{python}", python=[python], default=False,
         requires=[f"tests-{python}"])
-    #@nox.session(python=[*tests.python], default=False)
     def build_py(session: nox.Session) -> None:
         """Building the package - for particular Python version"""
         session.install("--group=build-py")
@@ -105,7 +104,6 @@ for python in tests.python:
 
 @nox.session(python=[PY_DEFAULT], default=False,
     requires=[f"build_py-{python}" for python in tests.python] + ["docs"])
-    #requires=["build_py", "docs"])
 def build(session: nox.Session) -> None:
     """Building the package - final stage"""
     session.install("--group=build")

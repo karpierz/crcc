@@ -1,6 +1,11 @@
 Changelog
 =========
 
+2.2.0 (2026-02-13)
+------------------
+- Added support for Python 3.15
+- Setup update (mainly dependencies).
+
 2.1.0 (2026-01-27)
 ------------------
 - | Backward INCOMPATIBILITY:
