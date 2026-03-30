@@ -13,7 +13,7 @@ __all__ = ('DLL_PATH', 'DLL', 'dlclose', 'CFUNC')
 here = Path(__file__).resolve().parent
 dll_suff = sysconfig.get_config_var("EXT_SUFFIX") or ".pyd"
 
-DLL_PATH = here.parent/("crc" + dll_suff)
+DLL_PATH = here/("crc" + dll_suff)
 
 from ctypes  import CDLL as _DLL
 from _ctypes import dlclose  # type: ignore[attr-defined]

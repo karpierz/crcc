@@ -15,7 +15,7 @@
 
 #include <string.h>
 
-#include "../../include/crcc/crc.h"
+#include <crcc/crc.h>
 #include "crc_defs.h"
 #include "crc_table.h"
 #include "crc_update.h"

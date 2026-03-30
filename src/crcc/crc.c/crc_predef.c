@@ -15,7 +15,7 @@
 #ifndef _CRC_PREDEF_C_
 #define _CRC_PREDEF_C_
 
-#include "../../include/crcc/crc.h"
+#include <crcc/crc.h>
 
 typedef enum {false = 0, true = 1} bool;
 
