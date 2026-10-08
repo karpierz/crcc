@@ -127,8 +127,7 @@ crc_t crc_final(const crc_model_t* crc_model, crc_t crc)
 
 const crc_model_t* crc_predefined_model_by_name(const char* name)
 {
-    crc_model_t* term = &crc_predefined_models[sizeof(crc_predefined_models) /
-                                               sizeof(crc_predefined_models[0]) - 1];
+    crc_model_t* term = &crc_predefined_models[crc_predefined_models_size];
     if ( ! term->name[0] )
     {
         crc_model_t* model;

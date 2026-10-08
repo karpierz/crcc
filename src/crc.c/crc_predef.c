@@ -99,4 +99,7 @@ crc_model_t crc_predefined_models[] = {
     {""},
 };
 
+size_t crc_predefined_models_size = (sizeof(crc_predefined_models) /
+                                     sizeof(crc_predefined_models[0]) - 1);
+
 #endif

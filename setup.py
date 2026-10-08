@@ -11,7 +11,7 @@ class BuildExt(build_ext):
         "unix": ["-O3", "-g0", "-ffast-math"],
     }
     ld_args_map = {
-        "msvc": ["/DEF:src/crcc/crc.c/crc.def"],
+        "msvc": ["/DEF:src/crc.c/crc.def"],
         "unix": [],
     }
 
@@ -33,15 +33,15 @@ ext_modules = [
     Extension(
         name="crcc._platform.crc",
         language="c",
-        sources=["src/crcc/crc.c/crc.c",
-                 "src/crcc/crc.c/crc_table.c",
-                 "src/crcc/crc.c/crc_update.c",
-                 "src/crcc/crc.c/crc_py.c"],
+        sources=["src/crc.c/crc.c",
+                 "src/crc.c/crc_table.c",
+                 "src/crc.c/crc_update.c",
+                 "src/crcc/crc_py.c"],
         depends=["include/crcc/crc.h",
-                 "src/crcc/crc.c/crc.def",
-                 "src/crcc/crc.c/crc_defs.h",
-                 "src/crcc/crc.c/crc_table.h",
-                 "src/crcc/crc.c/crc_update.h"],
+                 "src/crc.c/crc.def",
+                 "src/crc.c/crc_defs.h",
+                 "src/crc.c/crc_table.h",
+                 "src/crc.c/crc_update.h"],
         include_dirs=["include"],
     ),
 ]

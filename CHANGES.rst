@@ -1,6 +1,17 @@
 Changelog
 =========
 
+2.5.1 (2026-10-05)
+------------------
+- Full support for Python 3.15
+- Added support for PyPy 3.12
+- Added support for GraalPy 3.13
+- GraalPy <= 3.12 is not supported due to 'ctypes' incompatibility.
+- Dropped support for Python 3.10 (due to compatibility issues).
+- Updated nox's default python to version 3.14
+- Fix for nox 'lint' session.
+- Setup updates, fixes and improvements.
+
 2.3.0 (2026-03-30)
 ------------------
 - Setup update and improvement.

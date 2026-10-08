@@ -9,3 +9,4 @@ EXPORTS
     crc_model_by_name            @5
     crc_predefined_model_by_name @6
     crc_predefined_models        @7
+    crc_predefined_models_size   @8

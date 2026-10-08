@@ -8,7 +8,8 @@ import ctypes as ct
 from ._platform import CFUNC
 from ._dll      import dll
 
-class FILE(ct.Structure): pass
+class FILE(ct.Structure):
+    pass
 
 
 # The types of the CRC values.
@@ -50,11 +51,9 @@ class model_t(ct.Structure):
 
 # Predefined CRC models.
 #
-predefined_models = (model_t * 1000).in_dll(dll, "crc_predefined_models")
-for size, pmodel in enumerate(predefined_models):  # pragma: no cover
-    if pmodel.width == 0: break
+size = ct.c_size_t.in_dll(dll, "crc_predefined_models_size").value
 predefined_models = (model_t * size).in_dll(dll, "crc_predefined_models")
-del size, pmodel
+del size
 
 model = CFUNC(model_t,
               ct.c_char_p,
